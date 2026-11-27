@@ -22,6 +22,10 @@ jobs:
                   registry-url: 'https://registry.npmjs.org'
                   package-manager-cache: false
 
+            - name: Verify release tag
+              if: github.event_name == 'push' && github.ref_type == 'tag'
+              run: test "$GITHUB_REF_NAME" = "v$(node -p 'require("./package.json").version')"
+
             - name: Install deps
               run: npm ci
 
@@ -50,6 +54,10 @@ jobs:
                   echo "---- RELEASE NOTES ----"
                   cat RELEASE_NOTES.md
 
+            - name: Publish to npm
+              if: github.event_name == 'push' && github.ref_type == 'tag'
+              run: npm publish --access public --tag latest --provenance
+
             - name: Create GitHub Release
               uses: softprops/action-gh-release@v2
               with:
@@ -57,7 +65,3 @@ jobs:
                   body_path: RELEASE_NOTES.md
               env:
                   GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
-
-            - name: Publish to npm
-              if: github.event_name == 'push' && github.ref_type == 'tag'
-              run: npm publish --access public

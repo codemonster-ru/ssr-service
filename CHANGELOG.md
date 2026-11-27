@@ -7,6 +7,12 @@ and this project uses [Semantic Versioning](https://semver.org/lang/en/).
 
 ## [Unreleased]
 
+## [1.1.1] - 2026-11-27
+
+### Changed
+
+-   Publish the package from the corrected commit history with npm provenance.
+
 ## [1.1.0] - 2025-09-26
 
 ### Changed

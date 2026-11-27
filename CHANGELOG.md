@@ -7,6 +7,12 @@ and this project uses [Semantic Versioning](https://semver.org/lang/en/).
 
 ## [Unreleased]
 
+## [1.1.3] - 2026-11-27
+
+### Security
+
+-   Update Vitest, Vite, and transitive development dependencies to resolve the reported vulnerabilities in the test and build tools.
+
 ## [1.1.2] - 2026-11-27
 
 ### Security

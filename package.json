@@ -30,9 +30,9 @@
         "test:unit": "vitest run tests/unit",
         "test:e2e": "vitest run tests/e2e",
         "start": "node ./dist/bin/cli.js server",
-        "release:patch": "npm version patch --message \"Release SSR Service %s\" && git push --follow-tags",
-        "release:minor": "npm version minor --message \"Release SSR Service %s\" && git push --follow-tags",
-        "release:major": "npm version major --message \"Release SSR Service %s\" && git push --follow-tags"
+        "release:patch": "npm version patch --no-git-tag-version",
+        "release:minor": "npm version minor --no-git-tag-version",
+        "release:major": "npm version major --no-git-tag-version"
     },
     "dependencies": {
         "@codemonster-ru/env": "^1.1.0",

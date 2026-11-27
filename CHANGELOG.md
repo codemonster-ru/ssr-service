@@ -7,6 +7,12 @@ and this project uses [Semantic Versioning](https://semver.org/lang/en/).
 
 ## [Unreleased]
 
+## [1.1.2] - 2026-11-27
+
+### Security
+
+-   Require Express 4.22.3 or later within Express 4 and lock `proxy-addr` at 2.0.8 to address [CVE-2026-90711](https://github.com/advisories/GHSA-jqcg-44mw-7w3h).
+
 ## [1.1.1] - 2026-11-27
 
 ### Changed
